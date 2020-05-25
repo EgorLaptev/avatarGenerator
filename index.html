@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <svg id="avatar">
+
+    <!-- Foundation -->
+    <rect width="400" height="400" fill="yellow" id="foundation-shape-square" class="hidden" />
+    <circle cx="200" cy="200" r="200" fill="red" id="foundation-shape-circle" class="hidden" />
+
+  </svg>
+
+  <form id="options">
+    <fieldset>
+      <select id="foundation-shape">
+        <option value="circle">Circle</option>
+        <option value="square">Square</option>
+      </select>
+      <input type="color" id="foundation-color">
+    </fieldset>
+    <fieldset>
+      <select id="face-type">
+        <option value="circle">Circle</option>
+        <option value="square">Square</option>
+      </select>
+      <input type="color" id="face-color">
+    </fieldset>
+  </form>
+
+
+</body>
+
+</html>
