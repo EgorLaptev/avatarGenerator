@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   inputs.forEach( input => {
 
-    input.addEventListener('change', e => {
+    input.addEventListener('input', e => {
 
       if(input.tagName == 'SELECT') {
         for(let option of input.options) {
