@@ -18,19 +18,64 @@
       <!-- Foundation -->
       <rect width="400" height="400" id="foundation-shape-square" class="hidden" />
       <circle cx="200" cy="200" r="200" id="foundation-shape-circle" class="hidden" />
+
+      <!-- Face -->
+
+      <!-- Hats -->
+
+      <g id="hat-top" class="hidden">
+        <rect rx="20" height="32" width="190" y="170" x="105" />
+        <rect rx="2" height="141" width="110" y="30" x="145" />
+      </g>
+
+      <g id="hat-bowler" class="hidden" style="transform: scale(0.5)">
+        <rect rx="20" height="70" width="380" y="325" x="200" />
+        <rect rx="70" height="265" width="275" y="130" x="255" />
+      </g>
+
+      <!-- Glasses -->
+
     </svg>
   </div>
 
   <form id="options">
     <!-- <button id="closeOptions"><i class="fas fa-angle-left"></i></button> -->
     <fieldset>
-      <select id="foundation-shape" size="1">
-        <option selected disabled>Shape</option>
+      <select id="foundation-shape">
+        <option selected disabled>Shapes</option>
         <option value="circle">Circle</option>
         <option value="square">Square</option>
       </select>
       <input type="color" id="foundation-color">
     </fieldset>
+    <fieldset>
+      <select id="gender">
+        <option selected disabled>Faces</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="color" id="face-color">
+    </fieldset>
+    <fieldset>
+      <select id="hat">
+        <option selected>Hats</option>
+        <option value="top">Top hat</option>
+        <option value="bowler">Bowler hat</option>
+        <option value="boater">Boater hat</option>
+      </select>
+      <input type="color" id="hat-color">
+    </fieldset>
+    <fieldset>
+      <select id="glasses">
+        <option selected>Glasses</option>
+        <option value="avitator">Avitator glasses</option>
+        <option value="mask">Mask glasses</option>
+        <option value="sport">Sport glasses</option>
+        <option value="sun">Sunglasses</option>
+      </select>
+      <input type="color" id="glasses-color">
+    </fieldset>
+
   </form>
 
 

@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   svgContainer.addEventListener('mouseup', (e)=>{ mouseDown = false; });
 
   svgContainer.addEventListener('mousemove', (e)=>{
+    
     let props = avatar.getBoundingClientRect();
 
     if(mouseDown) {
