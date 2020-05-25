@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   'use strict';
 
-
+  let svgContainer = document.getElementById('svg-container');
 
   let form      = document.getElementById('options'),
       inputs    = form.querySelectorAll('input, select');
@@ -33,4 +33,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     });
   });
+
+  let mouseDown = false;
+  let shiftX, shiftY;
+
+
+  svgContainer.addEventListener('mousedown', (e)=>{
+    let props = avatar.getBoundingClientRect();
+
+    mouseDown = true;
+
+    shiftX = e.pageX - props.left;
+    shiftY = e.pageY - props.top;
+  });
+
+  svgContainer.addEventListener('mouseup', (e)=>{ mouseDown = false; });
+
+  svgContainer.addEventListener('mousemove', (e)=>{
+    let props = avatar.getBoundingClientRect();
+
+    if(mouseDown) {
+      avatar.style.left = e.x - shiftX;
+      avatar.style.top  = e.y - shiftY;
+    }
+  });
+
 });
