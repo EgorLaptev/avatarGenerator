@@ -9,9 +9,9 @@ body {
   height: 100%;
   overflow: hidden;
   display: flex;
-  justify-content: center;
   -ms-align-items: center;
   align-items: center;
+  background-color: #181818;
 }
 
 svg {
@@ -19,33 +19,51 @@ svg {
   height: 400px;
 }
 
-#options::-webkit-scrollbar-track {
-  margin-top: 25px;
-  background-color: #222;
-}
-
-#options::-webkit-scrollbar-thumb {
-  background-color: #333;
-}
-
-#options::-webkit-scrollbar {
-  width: 6px;
+.svg-container {
+  order: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
 }
 
 #options {
-  padding-top: 15px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
+  position: relative;
   width: 35%;
-  height: 35%;
-  max-width: 500px;
-  max-height: 500px;
-  background-color: #222;
+  height: 100%;
+  padding-top: 15px;
+  max-width: 400px;
+  min-width: 200px;
+  background-color: #111;
   overflow-x: hidden;
   overflow-y: scroll;
-  border-top-right-radius: 25px;
+  order: 0;
+  border-right: 4px solid rgba(0, 0, 0, .1);
+}
+
+#options #closeOptions {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(100% - 40px);
+  padding-top: 5px;
+  padding-left: 10px;
+  width: 40px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #111;
+  color: #222;
+  font-size: 20px;
+  cursor: pointer;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+#options #closeOptions:hover {
+  color: #111;
+  background-color: #181818;
 }
 
 #options fieldset {
@@ -75,6 +93,19 @@ svg {
   color: #ddd;
 }
 
+#options::-webkit-scrollbar-track {
+  margin-top: 25px;
+  background-color: transparent;
+}
+
+#options::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+#options::-webkit-scrollbar {
+  width: 0px;
+}
+
 option {
   color: #ddd;
   background-color: #222;
@@ -93,5 +124,5 @@ input[type='color'] {
 }
 
 .hidden {
-  visibility: hidden;
+  opacity: 0;
 }

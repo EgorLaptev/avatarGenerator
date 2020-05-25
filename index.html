@@ -6,34 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/19ce154370.js" crossorigin="anonymous"></script>
   <script src="index.js"></script>
   <title>Document</title>
 </head>
 
 <body>
 
-  <svg id="avatar">
-
-    <!-- Foundation -->
-    <rect width="400" height="400" fill="yellow" id="foundation-shape-square" class="hidden" />
-    <circle cx="200" cy="200" r="200" fill="red" id="foundation-shape-circle" class="hidden" />
-
-  </svg>
+  <div class="svg-container">
+    <svg id="avatar">
+      <!-- Foundation -->
+      <rect width="400" height="400" id="foundation-shape-square" class="hidden" />
+      <circle cx="200" cy="200" r="200" id="foundation-shape-circle" class="hidden" />
+    </svg>
+  </div>
 
   <form id="options">
+    <!-- <button id="closeOptions"><i class="fas fa-angle-left"></i></button> -->
     <fieldset>
-      <select id="foundation-shape">
+      <select id="foundation-shape" size="1">
+        <option selected disabled>Shape</option>
         <option value="circle">Circle</option>
         <option value="square">Square</option>
       </select>
       <input type="color" id="foundation-color">
-    </fieldset>
-    <fieldset>
-      <select id="face-type">
-        <option value="circle">Circle</option>
-        <option value="square">Square</option>
-      </select>
-      <input type="color" id="face-color">
     </fieldset>
   </form>
 
