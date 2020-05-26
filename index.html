@@ -23,17 +23,46 @@
 
       <!-- Hats -->
 
+      <!-- Top hat -->
       <g id="hat-top" class="hidden">
-        <rect rx="20" height="32" width="190" y="170" x="105" />
-        <rect rx="2" height="141" width="110" y="30" x="145" />
+        <rect rx="20" height="30" width="190" y="150" x="105" />
+        <rect rx="2" height="140" width="110" y="10" x="145" />
       </g>
 
+      <!-- Bowler hat -->
       <g id="hat-bowler" class="hidden" style="transform: scale(0.5)">
-        <rect rx="20" height="70" width="380" y="325" x="200" />
-        <rect rx="70" height="265" width="275" y="130" x="255" />
+        <rect rx="20" height="70" width="380" y="290" x="205" />
+        <rect rx="70" height="265" width="275" y="95" x="260" />
+      </g>
+
+      <!-- Boater hat -->
+      <g id="hat-boater" class="hidden">
+        <rect rx="5" height="40" width="200" y="140" x="100"></rect>
+        <rect rx="5" height="65" width="130" y="80" x="135"></rect>
       </g>
 
       <!-- Glasses -->
+
+      <!-- Rectangle glasses -->
+      <g id="glasses-rectangle" class="hidden">
+        <rect x="130" y="225" width="50" height="30" fill="" stroke="black" />
+        <rect x="215" y="225" width="50" height="30" fill="" stroke="black" />
+        <line x1="180" x2="215" y1="240" y2="240" stroke="black" />
+      </g>
+
+      <!-- Circle glasses -->
+      <g id="glasses-circle" class="hidden">
+        <circle cx="155" cy="240" r="25" fill="" stroke="black" />
+        <circle cx="240" cy="240" r="25" fill="" stroke="black" />
+        <line x1="180" x2="215" y1="240" y2="240" stroke="black" />
+      </g>
+
+      <!-- Ellipse glasses -->
+      <g id="glasses-ellipse" class="hidden">
+        <ellipse rx="30" ry="20" cx="155" cy="240" fill="" stroke="black" />
+        <ellipse rx="30" ry="20" cx="240" cy="240" fill="" stroke="black" />
+        <line x1="185" x2="210" y1="240" y2="240" stroke="black" />
+      </g>
 
     </svg>
   </div>
@@ -68,10 +97,9 @@
     <fieldset>
       <select id="glasses">
         <option selected>Glasses</option>
-        <option value="avitator">Avitator glasses</option>
-        <option value="mask">Mask glasses</option>
-        <option value="sport">Sport glasses</option>
-        <option value="sun">Sunglasses</option>
+        <option value="rectangle">Rectangle glasses</option>
+        <option value="ellipse">Ellipse glasses</option>
+        <option value="circle">Circle glasses</option>
       </select>
       <input type="color" id="glasses-color">
     </fieldset>
