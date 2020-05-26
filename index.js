@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   'use strict';
 
-  let svgContainer = document.getElementById('svg-container');
+  let svgContainer = document.getElementById('svg-container'),
+      avatar       = document.getElementById('avatar');
 
   let form      = document.getElementById('options'),
       inputs    = form.querySelectorAll('input, select');
@@ -37,6 +38,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
   let mouseDown = false;
   let shiftX, shiftY;
 
+  let scale     = 1,
+      scaleView = document.getElementById('avatar-scale');
 
   svgContainer.addEventListener('mousedown', (e)=>{
     let props = avatar.getBoundingClientRect();
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   svgContainer.addEventListener('mouseup', (e)=>{ mouseDown = false; });
 
   svgContainer.addEventListener('mousemove', (e)=>{
-    
+
     let props = avatar.getBoundingClientRect();
 
     if(mouseDown) {
@@ -58,5 +61,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
       avatar.style.top  = e.y - shiftY;
     }
   });
+
+
+  svgContainer.addEventListener('wheel', (e)=>{
+
+    if(e.deltaY < 0 && scale <= 2) {
+      scale += 0.05;
+      avatar.style.transform = `scale(${scale})`;
+    } else if(e.deltaY > 0  && scale >= .3){
+      scale -= 0.05;
+      avatar.style.transform = `scale(${scale})`;
+    }
+
+    scaleView.textContent = scale.toFixed(2);
+
+  })
 
 });

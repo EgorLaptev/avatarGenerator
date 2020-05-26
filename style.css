@@ -127,3 +127,17 @@ input[type='color'] {
 .hidden {
   opacity: 0;
 }
+
+#avatar-scale {
+  position: absolute;
+  z-index: 100;
+  right: 20px;
+  bottom: 5px;
+  font-family: monospace;
+  font-size: 15px;
+  user-select: none;
+}
+
+#avatar-scale::after {
+  content: ' X';
+}
