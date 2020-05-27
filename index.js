@@ -3,16 +3,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
   'use strict';
 
   let svgContainer = document.getElementById('svg-container'),
-      avatar       = document.getElementById('avatar');
+      avatar       = document.getElementById('avatar'),
+      svgText      = document.getElementById('svg_text-text');
 
   let form      = document.getElementById('options'),
       inputs    = form.querySelectorAll('input, select');
 
-  let closeBtn  =  form.querySelector('#closeOptions');
+  let closeBtn  = form.querySelector('#closeOptions'),
+      saveAs    = form.querySelector('#save_as'),
+      savePng   = form.querySelector('#save_png'),
+      saveJpeg  = form.querySelector('#save_jpeg');
+
 
   inputs.forEach( input => {
 
-    input.addEventListener('input', e => {
+    input.addEventListener('input', (e) => {
 
       if(input.tagName == 'SELECT') {
         for(let option of input.options) {
@@ -26,9 +31,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
           }
 
       } else if (input.tagName == 'INPUT') {
-        if(input.getAttribute('type') == 'color' && document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`) !== null) {
-          document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`).setAttribute('fill', input.value);
+        if(input.getAttribute('type') == 'color') {
+          if(document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`) !== null) {
+            document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`).setAttribute('fill', input.value);
+          }
+          if(input.previousElementSibling.getAttribute('type') == 'text') {
+            document.getElementById(`${input.previousElementSibling.id}-text`).setAttribute('fill', input.value);
+          }
+        } else if(input.getAttribute('type') == 'text') {
+          if(!(input.value.length > 20 )) svgText.textContent = input.value;
         }
+
       }
 
 
@@ -76,5 +89,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     scaleView.textContent = scale.toFixed(2);
 
   })
+
+  saveAs.addEventListener('click', (e)=>{
+    e.preventDefault();
+
+    saveAs.classList.toggle('hidden');
+    savePng.classList.toggle('hidden');
+    saveJpeg.classList.toggle('hidden');
+
+  });
 
 });
