@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             let svgElem     = document.getElementById(`${input.id}-${input.value}`),
                 pickColor   = input.nextElementSibling.value,
-                colorTarget = (svgElem.children[0].tagName == 'line') ? 'stroke' : 'fill';
+                colorTarget = (svgElem.children[0].tagName == 'line' || svgElem.children[0].tagName == 'path') ? 'stroke' : 'fill';
 
             // Show & Paint
             svgElem.classList.remove('hidden');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(input.getAttribute('type') == 'color') {
 
           let svgElem     = document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`),
-              colorTarget = (svgElem.children[0].tagName == 'line') ? 'stroke' : 'fill';
+              colorTarget = (svgElem.children[0].tagName == 'line' || svgElem.children[0].tagName == 'path') ? 'stroke' : 'fill';
 
           if(svgElem !== null) { svgElem.setAttribute(colorTarget, input.value); }
 

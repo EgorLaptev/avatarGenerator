@@ -57,7 +57,24 @@
         <line x1="190" x2="205" y1="290" y2="290" />
       </g>
 
-      <!-- <line x1="180" x2="215" y1="240" y2="240" stroke="black" /> -->
+      <!-- Mouths -->
+
+      <g id="mouth-indifferent" class="hidden">
+        <line x1="180" x2="210" y1="310" y2="310" />
+      </g>
+
+
+      <g id="mouth-happy" class="hidden">
+        <path d="M180 310 C 190 315, 200 315, 210 310" fill="transparent" />
+      </g>
+
+      <g id="mouth-unhappy" class="hidden">
+        <path d="M180 310 C 190 305, 200 305, 210 310" fill="transparent" />
+      </g>
+
+      <g id="mouth-surprise" class="hidden">
+        <ellipse rx="20" ry="10" cx="195" cy="310" />
+      </g>
 
       <!-- Hats -->
 
@@ -134,10 +151,21 @@
     <fieldset>
       <select id="nose">
         <option selected>Nose</option>
-        <option value="normal">Normal</option>
-        <option value="sharp">Sharp</option>
-        <option value="very_sharp">Very sharp</option>
-        <option value="obtuse">Obtuse</option>
+        <option value="normal">Normal nose</option>
+        <option value="sharp">Sharp nose</option>
+        <option value="very_sharp">Very sharp nose</option>
+        <option value="obtuse">Obtuse nose</option>
+      </select>
+      <input type="color" id="hat-color">
+    </fieldset>
+
+    <fieldset>
+      <select id="mouth">
+        <option selected>Mouth</option>
+        <option value="indifferent">Indifferent mouth</option>
+        <option value="happy">Happy mouth</option>
+        <option value="unhappy">Unhappy mouth</option>
+        <option value="surprise">Surprise mouth</option>
       </select>
       <input type="color" id="hat-color">
     </fieldset>
