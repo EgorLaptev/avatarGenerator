@@ -19,6 +19,13 @@
       <rect width="400" height="400" id="foundation-shape-square" class="hidden" />
       <circle cx="200" cy="200" r="200" id="foundation-shape-circle" class="hidden" />
 
+      <!-- Faces -->
+
+      <circle id="face-circle" cx="200" cy="250" r="100" class="hidden" />
+      <ellipse id="face-ellipse" rx="80" ry="100" cx="200" cy="250" class="hidden" />
+      <rect id="face-rectagle" rx="10" width="160" height="200" x="120" y="150" class="hidden" />
+
+
       <!-- Hats -->
 
       <!-- Top hat -->
@@ -81,6 +88,15 @@
       <input type="color" id="foundation-color">
     </fieldset>
     <fieldset>
+      <select id="face">
+        <option selected>Face</option>
+        <option value="ellipse">Ellipse face</option>
+        <option value="circle">Circle face</option>
+        <option value="rectagle">Rectangle face</option>
+      </select>
+      <input type="color" id="hat-color">
+    </fieldset>
+    <fieldset>
       <select id="hat">
         <option selected>Hats</option>
         <option value="top">Top hat</option>
@@ -102,13 +118,6 @@
       <input type="text" placeholder="text" id="svg_text">
       <input type="color" id="text-color">
     </fieldset>
-
-
-    <div class="save">
-      <button id="save_as">SAVE AS</button>
-      <button id="save_png" class="hidden">PNG</button>
-      <button id="save_jpeg" class="hidden">JPEG</button>
-    </div>
 
   </form>
 
