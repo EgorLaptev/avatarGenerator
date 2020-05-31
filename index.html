@@ -16,15 +16,48 @@
   <div id="svg-container">
     <svg id="avatar">
       <!-- Foundation -->
-      <rect width="400" height="400" id="foundation-shape-square" class="hidden" />
-      <circle cx="200" cy="200" r="200" id="foundation-shape-circle" class="hidden" />
+      <g id="foundation-shape-square" class="hidden">
+        <rect width="400" height="400" />
+      </g>
+      <g id="foundation-shape-circle" class="hidden">
+        <circle cx="200" cy="200" r="200" />
+      </g>
 
       <!-- Faces -->
 
-      <circle id="face-circle" cx="200" cy="250" r="100" class="hidden" />
-      <ellipse id="face-ellipse" rx="80" ry="100" cx="200" cy="250" class="hidden" />
-      <rect id="face-rectagle" rx="10" width="160" height="200" x="120" y="150" class="hidden" />
+      <g class="hidden" id="face-circle">
+        <circle cx="200" cy="250" r="100" />
+      </g>
+      <g class="hidden" id="face-ellipse">
+        <ellipse rx="80" ry="100" cx="200" cy="250" />
+      </g>
+      <g class="hidden" id="face-rectagle">
+        <rect rx="30" width="160" height="200" x="120" y="150" />
+      </g>
 
+      <!-- Noses -->
+
+      <g id="nose-sharp" class="hidden">
+        <line x1="190" x2="180" y1="260" y2="280" />
+        <line x1="180" x2="200" y1="280" y2="280" />
+      </g>
+
+      <g id="nose-very_sharp" class="hidden">
+        <line x1="190" x2="180" y1="260" y2="290" />
+        <line x1="180" x2="200" y1="290" y2="280" />
+      </g>
+
+      <g id="nose-normal" class="hidden">
+        <line x1="195" x2="190" y1="260" y2="290" />
+        <line x1="190" x2="200" y1="290" y2="290" />
+      </g>
+
+      <g id="nose-obtuse" class="hidden">
+        <line x1="190" x2="190" y1="260" y2="290" />
+        <line x1="190" x2="205" y1="290" y2="290" />
+      </g>
+
+      <!-- <line x1="180" x2="215" y1="240" y2="240" stroke="black" /> -->
 
       <!-- Hats -->
 
@@ -87,6 +120,7 @@
       </select>
       <input type="color" id="foundation-color">
     </fieldset>
+
     <fieldset>
       <select id="face">
         <option selected>Face</option>
@@ -96,6 +130,18 @@
       </select>
       <input type="color" id="hat-color">
     </fieldset>
+
+    <fieldset>
+      <select id="nose">
+        <option selected>Nose</option>
+        <option value="normal">Normal</option>
+        <option value="sharp">Sharp</option>
+        <option value="very_sharp">Very sharp</option>
+        <option value="obtuse">Obtuse</option>
+      </select>
+      <input type="color" id="hat-color">
+    </fieldset>
+
     <fieldset>
       <select id="hat">
         <option selected>Hats</option>
@@ -105,6 +151,7 @@
       </select>
       <input type="color" id="hat-color">
     </fieldset>
+
     <fieldset>
       <select id="glasses">
         <option selected>Glasses</option>
@@ -114,6 +161,7 @@
       </select>
       <input type="color" id="glasses-color">
     </fieldset>
+
     <fieldset>
       <input type="text" placeholder="text" id="svg_text">
       <input type="color" id="text-color">

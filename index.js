@@ -9,12 +9,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   let form      = document.getElementById('options'),
       inputs    = form.querySelectorAll('input, select');
 
-  let closeBtn  = form.querySelector('#closeOptions'),
-      saveAs    = form.querySelector('#save_as'),
-      savePng   = form.querySelector('#save_png'),
-      saveJpeg  = form.querySelector('#save_jpeg');
-
-
   inputs.forEach( input => {
 
     input.addEventListener('input', (e) => {
@@ -26,24 +20,35 @@ document.addEventListener('DOMContentLoaded', ()=>{
         };
 
           if(document.getElementById(`${input.id}-${input.value}`) !== null) {
-            document.getElementById(`${input.id}-${input.value}`).classList.remove('hidden');
-            document.getElementById(`${input.id}-${input.value}`).setAttribute('fill', input.nextElementSibling.value);
+
+            let svgElem     = document.getElementById(`${input.id}-${input.value}`),
+                pickColor   = input.nextElementSibling.value,
+                colorTarget = (svgElem.children[0].tagName == 'line') ? 'stroke' : 'fill';
+
+            // Show & Paint
+            svgElem.classList.remove('hidden');
+            svgElem.setAttribute(colorTarget, pickColor);
+
           }
 
       } else if (input.tagName == 'INPUT') {
+
         if(input.getAttribute('type') == 'color') {
-          if(document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`) !== null) {
-            document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`).setAttribute('fill', input.value);
-          }
+
+          let svgElem     = document.getElementById(`${input.previousElementSibling.id}-${input.previousElementSibling.value}`),
+              colorTarget = (svgElem.children[0].tagName == 'line') ? 'stroke' : 'fill';
+
+          if(svgElem !== null) { svgElem.setAttribute(colorTarget, input.value); }
+
           if(input.previousElementSibling.getAttribute('type') == 'text') {
             document.getElementById(`${input.previousElementSibling.id}-text`).setAttribute('fill', input.value);
           }
+
         } else if(input.getAttribute('type') == 'text') {
           if(!(input.value.length > 20 )) svgText.textContent = input.value;
         }
 
       }
-
 
     });
   });
@@ -64,7 +69,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 
   svgContainer.addEventListener('mouseup', (e)=>{ mouseDown = false; });
-
   svgContainer.addEventListener('mousemove', (e)=>{
 
     let props = avatar.getBoundingClientRect();
@@ -74,8 +78,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
       avatar.style.top  = e.y - shiftY;
     }
   });
-
-
   svgContainer.addEventListener('wheel', (e)=>{
 
     if(e.deltaY < 0 && scale <= 2) {
@@ -87,15 +89,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     scaleView.textContent = scale.toFixed(2);
-
-  })
-
-  saveAs.addEventListener('click', (e)=>{
-    e.preventDefault();
-
-    saveAs.classList.toggle('hidden');
-    savePng.classList.toggle('hidden');
-    saveJpeg.classList.toggle('hidden');
 
   });
 
